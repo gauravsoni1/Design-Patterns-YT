@@ -1,0 +1,22 @@
+class CartService {
+    private cartItems: string[] = []
+
+    addItem(item: string) {
+        this.cartItems.push(item);
+    }
+
+    removeItem(item: string) {
+        const itemIndex = this.cartItems.indexOf(item);
+        this.cartItems.splice(itemIndex, 1);
+    }
+
+    getCartItems() {
+        return this.cartItems;
+    }
+
+    clearCart() {
+        this.cartItems = [];
+    }
+}
+
+export default CartService;
