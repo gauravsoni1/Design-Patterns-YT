@@ -1,16 +1,16 @@
 class CartService {
-    private static CartServiceInstance: CartService;
     private cartItems: string[] = [];
+    private static cartServiceInstance: CartService;
 
     private constructor() {
         console.log("Cart service is being initialized !!!");
     }
 
-    public static getInstance() {
-        if (!this.CartServiceInstance) {
-            this.CartServiceInstance = new CartService();
+    public static getInstance(){
+        if (!this.cartServiceInstance){
+            this.cartServiceInstance = new CartService();
         }
-        return this.CartServiceInstance;
+        return this.cartServiceInstance;
     }
 
     addItem(item: string) {
